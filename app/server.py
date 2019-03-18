@@ -10,6 +10,7 @@ library = Library()
 @app.route("/library/book/<int:isbn>", methods=['GET'])
 def find(isbn):
     try:
+	print('fetching ')
         book = library.find(isbn)
         response = make_response(jsonify({
             "isbn": book.isbn,
